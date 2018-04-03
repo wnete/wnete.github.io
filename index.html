@@ -16,17 +16,18 @@
   var tr;
     for (var i = 0; i < data.length; i++) {
       tr = $('<tr/>');
-      tr.append("<td>" + data[i].Titulo + "</td>");
-      tr.append("<td>" + data[i].Fecha Inicio + "</td>");
-      tr.append("<td>" + data[i].Fotografia + "</td>");
-            tr.append("<td>" + data[i].Autor + "</td>");
-            tr.append("<td>" + data[i].Texto + "</td>");
+      tr.append("<td>" + data[i].Destinations + "</td>");
+      tr.append("<td>" + data[i].Hospitality + "</td>");
+      tr.append("<td>" + data[i].Taxi + "</td>");
+            tr.append("<td>" + data[i].Hotel + "</td>");
+            tr.append("<td>" + data[i].ThankYou + "</td>");
       $('table').append(tr);
     }
     console.log(data);
   }
 
   window.addEventListener('DOMContentLoaded', init)
+  
 </script>
 </head>
 <body>
@@ -37,11 +38,11 @@
 
 <table class="table">
     <tr>
-        <th>Titulo</th>
-        <th>Fecha Inicio</th>
-        <th>Fotografia</th>
-        <th>Autor</th>
-      <th>Texto</th>
+        <th>Destinations</th>
+        <th>Hospitality</th>
+        <th>Taxi</th>
+        <th>Hotel</th>
+      <th>Thank you</th>
     </tr>
 </table>
 
