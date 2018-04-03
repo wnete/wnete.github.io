@@ -13,26 +13,37 @@
 
   function showInfo(data, tabletop) {
 
-  console.log(data);
-for (var i = 0; i < data.length; i++) {
-$(‘.post’).append(
-<div class=”article” style=”background-image: url( ‘ + data[i].img + ‘.jpg)”> +
-<div class=”text”> + <h1> + data[i].title + </h1>+ data[i].body + </div>  + 
-<div class=”meta-info”> + <img src =”’ + data[i].img + ‘.jpg”>+
-<div class=”date”> + data[i].date + </div> +
-</div> +
-</div>);
-}
-
+  var tr;
+    for (var i = 0; i < data.length; i++) {
+      tr = $('<tr/>');
+      tr.append("<td>" + data[i].Titulo + "</td>");
+      tr.append("<td>" + data[i].Fecha Inicio + "</td>");
+      tr.append("<td>" + data[i].Fotografia + "</td>");
+            tr.append("<td>" + data[i].Autor + "</td>");
+            tr.append("<td>" + data[i].Texto + "</td>");
+      $('table').append(tr);
+    }
+    console.log(data);
   }
 
   window.addEventListener('DOMContentLoaded', init)
 </script>
 </head>
 <body>
-<div class=”post”>
-</div>
-<h1>Hello Wnete World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+
+<h1>Hola Mundo Wnete </h1>
+<p>Estoy en GitHub Pages.</p
+
+<table class="table">
+    <tr>
+        <th>Titulo</th>
+        <th>Fecha Inicio</th>
+        <th>Fotografia</th>
+        <th>Autor</th>
+      <th>Texto</th>
+    </tr>
+</table>
+
 </body>
 </html>
