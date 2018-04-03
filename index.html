@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <body>
+
+    <div id="data"></div>
+
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-<script type='text/javascript'>    
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/13zfEK_6GqIIjZ26mxdtSpfufqPFi8Yyk806bqoR6sS0/pubhtml';
+    <script type="text/javascript">
+      var a,b;
 
-  function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
+      var public_spreadsheet_url_1 = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE&output=html',
+          public_spreadsheet_url_2 = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdE5OcDE1SENpT1g2R2JEX2tnZ3ZIWHc&output=html';
 
-  function showInfo(data, tabletop) {
+      function init() {
+        a = Tabletop({
+            key: public_spreadsheet_url_1,
+            callback: showInfo,
+            simpleSheet: true
+        });
+        b = Tabletop({
+            key: public_spreadsheet_url_2,
+            callback: showInfo,
+            simpleSheet: true
+        });
+      }
 
-  var tr;
-    for (var i = 0; i < data.length; i++) {
-      tr = $('<tr/>');
-      tr.append("<td>" + data[i].Destinations + "</td>");
-      tr.append("<td>" + data[i].Hospitality + "</td>");
-      tr.append("<td>" + data[i].Taxi + "</td>");
-            tr.append("<td>" + data[i].Hotel + "</td>");
-            tr.append("<td>" + data[i].Thank + "</td>");
-      $('table').append(tr);
-    }
-    console.log(data);
-  }
+      var count = 0;
 
-  window.addEventListener('DOMContentLoaded', init)
-  
-</script>
-</head>
-<body>
+      function showInfo(data, tabletop) {
+        // data comes through as a simple array since simpleSheet is turned on
+        var div = document.getElementById('data'),
+            html = "<h1>SHEET " + (++count) + "</h1>",
+            prop, i;
+        for(i = 0; i < data.length; i++) {
+          for(prop in data[i]) {
+            html = html + "&nbsp;-&nbsp;" + data[i][prop];
+          }
+          html = html + "<hr><br>";
+        }
+        div.innerHTML = div.innerHTML + html;
+      }
 
-
-<h1>Hola Mundo Wnete </h1>
-<p>Estoy en GitHub Pages.</p
-
-<table class="table">
-    <tr>
-        <th>Destinations</th>
-        <th>Hospitality</th>
-        <th>Taxi</th>
-        <th>Hotel</th>
-      <th>Thank</th>
-    </tr>
-</table>
-
-</body>
+      window.addEventListener('DOMContentLoaded', init)
+    </script>
+  </body>
 </html>

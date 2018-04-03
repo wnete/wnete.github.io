@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>    
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/13zfEK_6GqIIjZ26mxdtSpfufqPFi8Yyk806bqoR6sS0/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+
+  var tr;
+    for (var i = 0; i < data.length; i++) {
+$(‘.post’).append(
+<div class=”article” style=”background-image: url( ‘ + data[i].img + ‘.jpg)”> +
+<div class=”text”> + <h1> + data[i].title + </h1> + data[i].body + </div> + 
+<div class=”meta-info”> + <img src =”’ + data[i].img + ‘.jpg”> +
+<div class=”date”> + data[i].date + </div> +
+</div> +
+</div>);
+}
+
+    console.log(data);
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+  
+</script>
+</head>
+<body>
+
+
+<h1>Hola Mundo Wnete </h1>
+<p>Estoy en GitHub Pages.</p
+
+<div class=”post”>
+</div>
+
+</body>
+</html>

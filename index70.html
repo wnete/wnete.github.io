@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>    
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/13zfEK_6GqIIjZ26mxdtSpfufqPFi8Yyk806bqoR6sS0/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+
+  var tr;
+    for (var i = 0; i < data.length; i++) {
+      tr = $('<tr/>');
+      tr.append("<td>" + data[i].Destinations + "</td>");
+      tr.append("<td>" + data[i].Hospitality + "</td>");
+      tr.append("<td>" + data[i].Taxi + "</td>");
+            tr.append("<td>" + data[i].Hotel + "</td>");
+            tr.append("<td>" + data[i].Thank + "</td>");
+      $('table').append(tr);
+    }
+    console.log(data);
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+  
+</script>
+</head>
+<body>
+
+
+<h1>Hola Mundo Wnete </h1>
+<p>Estoy en GitHub Pages.</p
+
+<table class="table">
+    <tr>
+        <th>Destinations</th>
+        <th>Hospitality</th>
+        <th>Taxi</th>
+        <th>Hotel</th>
+      <th>Thank</th>
+    </tr>
+</table>
+
+</body>
+</html>
